@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab 3 – Rock • Paper • Scissors</title>
+  <!-- External CSS (required) -->
+  <link rel="stylesheet" href="lab3.css" />
+</head>
+<body>
+  <!-- Header + Footer share same class for identical styling -->
+  <header class="band">
+    <h1>Rock • Paper • Scissors</h1>
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="https://www.wikihow.com/Play-Rock,-Paper,-Scissors" target="_blank" rel="noopener">How-To</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank" rel="noopener">History</a></li>
+        <li><a href="https://www.amazon.com/ref=nav_logo" target="_blank" rel="noopener">Randomizer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Body: main + sidebar on ONE line via flex -->
+  <div class="content-wrap">
+    <main class="main">
+      <h2>Play a Round</h2>
+      <p>Enter your name and choose your move.</p>
+
+      <!-- Form (required: name label, select R/P/S, name required) -->
+      <form action="#" method="get" class="rps-form" autocomplete="on">
+        <div class="field-group">
+          <label for="playerName">Name</label>
+          <input
+            type="text"
+            id="playerName"
+            name="playerName"
+            placeholder="Your name"
+            required
+          />
+        </div>
+
+        <div class="field-group">
+          <label for="move">Choose your move</label>
+          <select id="move" name="move">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+          </select>
+        </div>
+
+        <button type="submit">Play</button>
+      </form>
+    </main>
+
+    <aside class="sidebar" aria-label="Rules">
+      <h3>Rules</h3>
+      <ol>
+        <li>Rock beats Scissors</li>
+        <li>Scissors beats Paper</li>
+        <li>Paper beats Rock</li>
+      </ol>
+      <p>Hover over this panel to see a color change.</p>
+    </aside>
+  </div>
+
+  <footer class="band">
+    <p>Have fun &amp; play fair!</p>
+  </footer>
+</body>
+</html>
