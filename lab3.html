@@ -4,39 +4,139 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lab 3 – Rock • Paper • Scissors</title>
-  <!-- External CSS (required) -->
-  <link rel="stylesheet" href="lab3.css" />
+
+  <style>
+    /* ===== Global / Body ===== */
+    body {
+      background: #f7f9fc;
+      color: #1b1f24;
+      font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    /* Header & Footer (same class) */
+    .band {
+      background: #0d3b66;
+      color: white;
+      text-align: center;
+      padding: 20px 16px;
+      margin: 12px 0;
+    }
+    .band h1 { margin: 8px 0 12px; }
+
+    /* Nav */
+    .nav {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
+    .nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background 0.15s ease;
+    }
+    .nav a:hover {
+      background: rgba(255,255,255,0.18);
+    }
+
+    /* Layout */
+    .content-wrap {
+      display: flex;
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto 24px;
+      padding: 0 16px;
+    }
+    .main {
+      background: white;
+      width: 70%;
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    }
+    .sidebar {
+      background: #f1f5ff;
+      width: 30%;
+      padding: 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease;
+    }
+    .sidebar:hover {
+      background: #e2ebff;
+    }
+
+    /* Form */
+    .field-group { margin: 12px 0; }
+    .field-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .field-group input[type="text"],
+    .field-group select {
+      width: 60%;
+      max-width: 520px;
+      padding: 10px 12px;
+      border: 1px solid #cfd5e2;
+      border-radius: 8px;
+      transition: width 0.25s ease, border-color 0.15s ease;
+    }
+    .field-group input[type="text"]:focus {
+      width: 80%;
+      border-color: #6b8cff;
+      outline: none;
+    }
+    button[type="submit"] {
+      background: #4c7cf3;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background 0.15s ease;
+    }
+    button[type="submit"]:hover {
+      background: #3a66cf;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .content-wrap { flex-direction: column; }
+      .main, .sidebar { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Header + Footer share same class for identical styling -->
   <header class="band">
     <h1>Rock • Paper • Scissors</h1>
-    <nav aria-label="Primary">
+    <nav>
       <ul class="nav">
-        <li><a href="https://www.wikihow.com/Play-Rock,-Paper,-Scissors" target="_blank" rel="noopener">How-To</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank" rel="noopener">History</a></li>
+        <li><a href="https://www.wikihow.com/Play-Rock,-Paper,-Scissors" target="_blank">How-To</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank">History</a></li>
         <li><a href="https://www.amazon.com/ref=nav_logo" target="_blank" rel="noopener">Amazon</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Body: main + sidebar on ONE line via flex -->
   <div class="content-wrap">
     <main class="main">
       <h2>Play a Round</h2>
       <p>Enter your name and choose your move.</p>
 
-      <!-- Form (required: name label, select R/P/S, name required) -->
-      <form action="#" method="get" class="rps-form" autocomplete="on">
+      <form action="#" method="get" class="rps-form">
         <div class="field-group">
           <label for="playerName">Name</label>
-          <input
-            type="text"
-            id="playerName"
-            name="playerName"
-            placeholder="Your name"
-            required
-          />
+          <input type="text" id="playerName" name="playerName" placeholder="Your name" required>
         </div>
 
         <div class="field-group">
@@ -52,7 +152,7 @@
       </form>
     </main>
 
-    <aside class="sidebar" aria-label="Rules">
+    <aside class="sidebar">
       <h3>Rules</h3>
       <ol>
         <li>Rock beats Scissors</li>
